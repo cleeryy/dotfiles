@@ -4,6 +4,15 @@ echo "Backing up existing .zshrc file..."
 mv ~/.zshrc ~/.zshrc.bak
 echo "Existing .zshrc file backed up successfully!"
 
+# Backup .config folder
+echo "Searching for existing .config folder..."
+if [ -d ~/.config ]; then
+    echo "Found existing .config folder. Backing up .config folder..."
+    mv ~/.config ~/.config.bak
+    echo "Existing .config folder backed up successfully!"
+fi else
+    echo "No existing .config folder found!"
+
 # Cloning the repository in the home directory
 echo "Cloning the repository in the home directory..."
 cd ~
