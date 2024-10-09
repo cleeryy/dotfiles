@@ -23,4 +23,4 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- file explorer
-keymap.set("n", "<leader><leader>", "<cmd>NvimTreeOpen<CR>", { desc = "Open the tree file explorer." }) --  open file explorer
+keymap.set("n", "<leader><leader>", "<cmd>NvimTreeToggle<CR>", { desc = "Open the tree file explorer." }) --  open file explorer
