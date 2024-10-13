@@ -23,6 +23,9 @@ alias cd="z"
 alias vim="nvim"
 alias v="vim"
 
+## Bat (better cat)
+alias cat="bat"
+
 ## Python
 alias makevenv="python3 -m venv env && source ./env/bin/activate"
 
