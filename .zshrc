@@ -15,6 +15,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Aliases
 ## Eza (better ls)
 alias ls="eza -l --icons=always --git -o --color=always --hyperlink"
+alias l="ls -la"
 alias tree="eza --tree --icons=always --git -o --color=always --hyperlink"
 
 ## Zoxide (better cd)
