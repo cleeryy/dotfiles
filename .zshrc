@@ -3,6 +3,9 @@ if [ "$TMUX" = "" ]; then
   tmux attach || tmux new -s default;
 fi
 
+# fzf-git
+[ -f ~/.fzf-git.sh ] && source ~/.fzf-git.sh
+
 # Aliases
 ## General
 alias fucking="sudo"
