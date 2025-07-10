@@ -16,7 +16,7 @@ fi else
 # Cloning the repository in the home directory
 echo "Cloning the repository in the home directory..."
 cd ~
-git clone git@github.com/smoothwastaken/dotfiles.git
+git clone git@github.com/cleeryy/dotfiles.git
 echo "Repository cloned successfully!"
 
 # Change directory to dotfiles
