@@ -1,3 +1,6 @@
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 # Tmux session on startup
 if [ "$TMUX" = "" ]; then
   tmux attach || tmux new -s default;
@@ -56,6 +59,31 @@ export PATH="$PATH:/Users/cleeryy/.local/bin"
 
 # Fzf
 source <(fzf --zsh)
+
+# CTF Write-Ups
+# Add this to your ~/.bashrc or ~/.zshrc
+function ctfwu() {
+    if [ $# -lt 3 ]; then
+        echo "Usage: ctfwu <ctf_name> <challenge_name> <category> [points]"
+        return 1
+    fi
+    
+    # Run the script and capture its output (last line is the directory path)
+    local new_dir=$(~/scripts/ctf-writeup-gen.sh "$1" "$2" "$3" "$4")
+    
+    # Extract the last line of output which should be the directory path
+    new_dir=$(echo "$new_dir" | tail -n 1)
+    
+    # Change to the new directory
+    cd "$new_dir"
+    
+    # Open the write-up file in your preferred editor (optional)
+    # If using VS Code:
+    # code write-up.md
+    # Or if using vim:
+    vim write-up.md
+}
+
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -120,3 +148,19 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/Users/cleeryy/.bun/_bun" ] && source "/Users/cleeryy/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/Users/cleeryy/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
